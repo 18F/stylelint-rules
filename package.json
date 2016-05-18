@@ -1,0 +1,16 @@
+{
+  "name": "18F-stylelint",
+  "version": "1.0.0",
+  "description": "A style (CSS, Sass) linter for the 18F style guide",
+  "bin": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Adam Biagianti",
+  "license": "SEE LICENSE in LICENSE.md",
+  "dependencies": {
+    "commander": "^2.9.0",
+    "stylelint": "^6.4.1",
+    "stylelint-test-rule-tape": "^0.2.0"
+  }
+}
