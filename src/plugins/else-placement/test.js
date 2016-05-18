@@ -28,7 +28,7 @@ testRule(elsePlacement.rule, {
   }, {
     code: '@if {  } \r @else { }',
     message: elsePlacement.messages.rejectedSameLine
-  }]
+  }],
 });
 
 // Again check for the presence of a newline character, rejecting

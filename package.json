@@ -5,7 +5,7 @@
   "main": "index.js",
   "bin": "bin/cli.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node bin/test-runner.js"
   },
   "author": "Adam Biagianti",
   "license": "SEE LICENSE in LICENSE.md",
@@ -13,5 +13,8 @@
     "commander": "^2.9.0",
     "stylelint": "^6.4.1",
     "stylelint-test-rule-tape": "^0.2.0"
+  },
+  "devDependencies": {
+    "tap-dot": "^1.0.5"
   }
 }
