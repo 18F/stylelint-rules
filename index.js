@@ -1,20 +1,31 @@
 var program = require('commander');
 var path = require('path');
 var stylelint = require('stylelint');
+var formatters = require('stylelint/dist/formatters');
+var lintConfig = require('./src/stylelint-config');
 
-// program
-//   .version('0.0.0')
-//   .usage('[options]')
-//   .options('-i, --ignore-files <file>', 'String containing directories or files to ignore');
+var gulpStylelint = require('gulp-stylelint');
+var path = require('path');
 
-stylelint.lint({
-  files: './src/css/**/*.scss',
-  config: require('./src/stylelint-config'),
-  configBasedir: path.join(__dirname, './src'),
-  syntax: 'scss',
-  formatter: 'string'
-}).then(function(output) {
-  console.log(output.results);
-}).catch(function(err) {
-  console.log(err);
-});
+module.exports = function(files, syntax, ignore) {
+  if (!files) {
+    throw new Error('File to lint must be supplied').
+  }
+
+  var lintConfig = require('./src/stylelint-config');
+
+  if (ignore) {
+    lintConfig['ignoreFiles'] = ignore;
+  }
+
+  return gulp
+    .src(files)
+    .pipe(gulpStylelint({
+      config: require('./src/stylelint-config'),
+      configBasedir: path.join(__dirname, './src'),
+      syntax: syntax || 'scss',
+      reporters: [
+        {formatter: 'verbose', console: true}
+      ]
+    }));
+};
