@@ -6,15 +6,16 @@ var lintConfig = require('../src/stylelint-config');
 
 program
   .version('0.0.0')
-  .usage('[options]')
-  .option('-f, --files <string>', 'Glob of files to lint.')
+  .usage('[options] <fileString>')
   .option('-s, --syntax <scss|css|less>', 'Linter syntax. Defaults to scss.')
   .option('-i, --ignore-files <string>', 'Glob of directories or files to ignore')
   .option('-r, --formatter <verbose|json|string>', 'Output formatter. Defaults to verbose.')
   .option('-c, --config <rules>', 'Path to a js file that exports an object describing additional rules.')
   .parse(process.argv);
 
-if (!program.files) {
+var files = program.args.pop();
+
+if (files) {
   console.log('You must supply the path of files to lint.');
   process.exit();
 }
@@ -23,11 +24,11 @@ var formatter = program.formatter || 'verbose';
 var ignoredFiles = program['ignore-files'];
 
 if (ignoredFiles) {
-  lintConfig['ignoredFiles'] = ignoredFiles;
+  lintConfig['ignoreFiles'] = ignoredFiles;
 }
 
 stylelint.lint({
-  files: program.files,
+  files: files,
   config: lintConfig,
   configBasedir: path.join(__dirname, '../', './src'),
   syntax: program.syntax || 'scss',

@@ -1,31 +1,32 @@
-var program = require('commander');
 var path = require('path');
+var gulp = require('gulp');
+var gulpStylelint = require('gulp-stylelint');
 var stylelint = require('stylelint');
-var formatters = require('stylelint/dist/formatters');
 var lintConfig = require('./src/stylelint-config');
 
-var gulpStylelint = require('gulp-stylelint');
-var path = require('path');
+module.exports = function(files, options) {
+  options = (typeof options === 'object' && options) || {};
 
-module.exports = function(files, syntax, ignore) {
-  if (!files) {
-    throw new Error('File to lint must be supplied').
+  if (!files || typeof files !== 'string') {
+    throw new Error('File to lint must be supplied');
   }
 
   var lintConfig = require('./src/stylelint-config');
 
-  if (ignore) {
-    lintConfig['ignoreFiles'] = ignore;
+  if (options.ignore) {
+    lintConfig['ignoreFiles'] = options.ignore;
   }
 
-  return gulp
-    .src(files)
-    .pipe(gulpStylelint({
-      config: require('./src/stylelint-config'),
-      configBasedir: path.join(__dirname, './src'),
-      syntax: syntax || 'scss',
-      reporters: [
-        {formatter: 'verbose', console: true}
-      ]
-    }));
+  return function() {
+    return gulp
+      .src(files)
+      .pipe(gulpStylelint({
+        config: require('./src/stylelint-config'),
+        configBasedir: path.join(__dirname, './src'),
+        syntax: options.syntax || 'scss',
+        reporters: [
+          {formatter: 'verbose', console: true}
+        ]
+      }));
+  }
 };
