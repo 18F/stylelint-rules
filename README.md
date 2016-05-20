@@ -55,3 +55,6 @@ Additionally, the CLI exposes the following options:
 -r, --formatter [verbose|json|string], Output formatter. Defaults to verbose.
 -c, --config [rules], Path to a js file that exports an object describing additional rules.
 ```
+
+## Contributing
+Please see [CONTRIBUTING.md](./CONTRIBUTING.md).
