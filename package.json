@@ -11,12 +11,12 @@
   "license": "SEE LICENSE in LICENSE.md",
   "dependencies": {
     "commander": "^2.9.0",
-    "stylelint": "^6.4.1",
-    "stylelint-test-rule-tape": "^0.2.0"
+    "stylelint": "^6.4.1"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-stylelint": "^2.0.2",
+    "stylelint-test-rule-tape": "^0.2.0",
     "tap-dot": "^1.0.5"
   }
 }
