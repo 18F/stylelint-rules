@@ -4,7 +4,7 @@ var configs = {
     "./plugins/import-path-leading-underscore",
     "./plugins/import-path-filename-extension",
     "./plugins/else-placement",
-    "./plugins/property-count",
+    "./plugins/declaration-block-max-declarations",
     "./plugins/name-format",
     "./plugins/url-format"
   ],
@@ -74,7 +74,7 @@ var configs = {
     "plugin/import-path-leading-underscore": false,
     "plugin/import-path-filename-extension": false,
     "plugin/else-placement": 'same-line',
-    "plugin/property-count": 10,
+    "plugin/declaration-block-max-declarations": 10,
     "plugin/name-format": {
       'allow-leading-underscore': false,
       'convention': 'hyphenated-lowercase'
