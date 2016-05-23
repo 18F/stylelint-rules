@@ -9,10 +9,19 @@ var messages = utils.ruleMessages(ruleName, {
 
 var startsWithUnderscore = new RegExp(/^["']?_/);
 
-var pluginDefinition = stylelint.createPlugin(ruleName, function(expected, options) {
+function report(node, message, result) {
+  utils.report({
+    node: node,
+    message: message,
+    result: result,
+    ruleName: ruleName
+  });
+}
+
+var pluginDefinition = stylelint.createPlugin(ruleName, function(requireUnderscore, options) {
   return function (css, result) {
     var validOptions = utils.validateOptions(result, ruleName, {
-      actual: expected,
+      actual: requireUnderscore,
       possible: [true, false]
     });
 
@@ -20,37 +29,23 @@ var pluginDefinition = stylelint.createPlugin(ruleName, function(expected, optio
       return;
     }
 
-    css.walkAtRules('import', function(atRule) {
-      if (!expected) {
-        // @import stars with an underscore, and shouldn't
-        if (startsWithUnderscore.test(atRule.params)) {
-          utils.report({
-            node: atRule,
-            message: messages.rejected,
-            result: result,
-            ruleName: ruleName
-          });
+    function checkAtRules(atRule) {
+      var ruleValue = atRule.params;
+
+      if (!requireUnderscore) {
+        // @import starts with an underscore, and shouldn't
+        if (startsWithUnderscore.test(ruleValue)) {
+          report(atRule, messages.rejected, result);
         }
       } else {
         // @import does not start with an underscore, and should
-        if (!startsWithUnderscore.test(atRule.params)) {
-          utils.report({
-            node: atRule,
-            message: messages.expected,
-            result: result,
-            ruleName: ruleName
-          });
+        if (!startsWithUnderscore.test(ruleValue)) {
+          report(atRule, messages.expected, result);
         }
       }
-      // } else if (/\.scss(?=['|"])?/.test(atRule.params)) {
-      //   utils.report({
-      //     node: atRule,
-      //     message: messages.rejectedFilenameExtension,
-      //     result: result,
-      //     ruleName: ruleName
-      //   });
-      // }
-    });
+    }
+
+    css.walkAtRules('import', checkAtRules);
   };
 });
 
