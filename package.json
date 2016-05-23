@@ -11,6 +11,7 @@
   "license": "SEE LICENSE in LICENSE.md",
   "dependencies": {
     "commander": "^2.9.0",
+    "glob": "^7.0.3",
     "stylelint": "^6.4.1"
   },
   "devDependencies": {
