@@ -1,5 +1,7 @@
 var stylelint = require('stylelint');
 var utils = stylelint.utils;
+var path = require('path');
+
 
 var ruleName = 'plugin/import-path-leading-underscore';
 var messages = utils.ruleMessages(ruleName, {
@@ -30,16 +32,23 @@ var pluginDefinition = stylelint.createPlugin(ruleName, function(requireUndersco
     }
 
     function checkAtRules(atRule) {
-      var ruleValue = atRule.params;
+      var pathInfo = path.parse(atRule.params);
+      var fileToImport = pathInfo.base;
+      var extName = pathInfo.ext;
+
+      // ignore css imports
+      if (extName.indexOf('.css') !== -1) {
+        return;
+      }
 
       if (!requireUnderscore) {
         // @import starts with an underscore, and shouldn't
-        if (startsWithUnderscore.test(ruleValue)) {
+        if (startsWithUnderscore.test(fileToImport)) {
           report(atRule, messages.rejected, result);
         }
       } else {
         // @import does not start with an underscore, and should
-        if (!startsWithUnderscore.test(ruleValue)) {
+        if (!startsWithUnderscore.test(fileToImport)) {
           report(atRule, messages.expected, result);
         }
       }

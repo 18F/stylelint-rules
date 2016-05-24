@@ -9,6 +9,10 @@ testRule(importPath.rule, {
     {
       code: '@import "_some-file"',
       message: importPath.messages.rejected
+    },
+    {
+      code: '@import "patah/to/_some-file"',
+      message: importPath.messages.rejected
     }
   ]
 });
@@ -20,6 +24,10 @@ testRule(importPath.rule, {
   reject: [
     {
       code: '@import "some-file"',
+      message: importPath.messages.expected
+    },
+    {
+      code: '@import "path/to/some-file"',
       message: importPath.messages.expected
     }
   ]
