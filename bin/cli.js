@@ -29,7 +29,7 @@ if (ignoredFiles) {
 
 stylelint.lint({
   files: files,
-  config: lintConfig,
+  config: program.config || lintConfig,
   configBasedir: path.join(__dirname, '../', './src'),
   syntax: program.syntax || 'scss',
   formatter: formatter

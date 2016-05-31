@@ -27,7 +27,11 @@ The stylelint function accepts two arguments:
     ```
     {
       syntax: Syntax the linter validates against. Valid options are `scss|css|less`. Defaults to scss
-      ignore: A glob (or array of globs) of files the linter should ignore
+      ignore: A glob (or array of globs) of files the linter should ignore,
+      config: A path to a stylelint config file. File should use the same
+      conventions as the config file found in this repository, exporting a
+      single javascript object.
+
     }
     ```
 
