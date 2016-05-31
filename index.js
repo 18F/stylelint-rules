@@ -17,11 +17,15 @@ module.exports = function(files, options) {
     lintConfig['ignoreFiles'] = options.ignore;
   }
 
+  if (typeof options.config === 'string' && options.config) {
+    lintConfig = require(path.resolve(__dirname, options.config));
+  }
+
   return function() {
     return gulp
       .src(files)
       .pipe(gulpStylelint({
-        config: require('./src/stylelint-config'),
+        config: lintConfig,
         configBasedir: path.join(__dirname, './src'),
         syntax: options.syntax || 'scss',
         reporters: [
