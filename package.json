@@ -1,10 +1,10 @@
 {
   "name": "@18f/stylelint-rules",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A style (CSS, Sass) linter for the 18F style guide",
   "main": "index.js",
   "bin": {
-    "@18f/stylelint-rules": "cli.js"
+    "@18f/stylelint-rules": "bin/cli.js"
   },
   "scripts": {
     "test": "node bin/test-runner.js"
