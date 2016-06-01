@@ -1,14 +1,23 @@
 {
-  "name": "18F-stylelint",
-  "version": "1.0.0",
+  "name": "@18f/stylelint-rules",
+  "version": "1.0.1",
   "description": "A style (CSS, Sass) linter for the 18F style guide",
   "main": "index.js",
-  "bin": "bin/cli.js",
+  "bin": {
+    "@18f/stylelint-rules": "bin/cli.js"
+  },
   "scripts": {
     "test": "node bin/test-runner.js"
   },
-  "author": "Adam Biagianti",
-  "license": "SEE LICENSE in LICENSE.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/18F/stylelint-rules.git"
+  },
+  "author": "Adam Biagianti (adam.biagianti@gsa.gov)",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "bugs": {
+    "url": "https://github.com/18F/stylelint-rules/issues"
+  },
   "dependencies": {
     "commander": "^2.9.0",
     "glob": "^7.0.3",
@@ -19,5 +28,6 @@
     "gulp-stylelint": "^2.0.2",
     "stylelint-test-rule-tape": "^0.2.0",
     "tap-dot": "^1.0.5"
-  }
+  },
+  "homepage": "https://github.com/18F/stylelint-rules#readme"
 }

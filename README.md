@@ -1,4 +1,4 @@
-# 18F-stylelint
+# stylelint-rules
 A style (CSS, Sass) linter for the 18F style guide
 
 The aim of this module is to present a sensible set of linting defaults for
@@ -10,15 +10,15 @@ scss-lint.
 
 ## Usage Information
 
-To get started, run `npm install --save-dev 18F-stylelint`. This adds the module
+To get started, run `npm install --save-dev @18f/stylelint-rules`. This adds the module
 to your project and saves the dependency to your package.json.
 
-18F-stylelint provides two ways to run its linter: via the command line, and
+stylelint-rules provides two ways to run its linter: via the command line, and
 via gulp.
 
 ### Run via gulp
 To run the linter using gulp, import the module into your gulpfile:
-`var stylelint = require('18F-stylelint');`
+`var stylelint = require('@18f/stylelint-rules');`
 
 The stylelint function accepts two arguments:
   * `files`: **required** A glob of files you want to lint. For example './src/scss/\*\*/*.scss'
@@ -49,7 +49,7 @@ gulp.task('my-lint-task', lintFunction);
 The linter can also be run using the command line. The script is installed in
 the .bin folder of your node_modules directory. The only required argument to the script is a glob of directories (or path to a single file) to be linted.
 
-For example: `node node_modules/.bin/18F-stylelint "./path/to/sass/**/*.scss"`
+For example: `node node_modules/.bin/stylelint-rules "./path/to/sass/**/*.scss"`
 
 Additionally, the CLI exposes the following options:
 
