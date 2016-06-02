@@ -4,7 +4,7 @@ var utils = stylelint.utils;
 var ruleName = 'plugin/declaration-block-max-declarations';
 var messages = {
   expected: function(actualPropCount, expectedPropCount) {
-    return 'Expected no more than ' + expectedPropCount + ' declaration(s). Found ' + actualPropCount '.';
+    return 'Expected no more than ' + expectedPropCount + ' declaration(s). Found ' + actualPropCount + '.';
   }
 };
 
