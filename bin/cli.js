@@ -15,7 +15,7 @@ program
 
 var files = program.args.pop();
 
-if (files) {
+if (!files) {
   console.log('You must supply the path of files to lint.');
   process.exit();
 }
