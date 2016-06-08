@@ -68,7 +68,7 @@ var configs = {
     "number-zero-length-no-unit": true,
     "property-case": "lower",
     "property-value-whitelist": {
-      "color": ["/^$/"]
+      "color": ["/(\$|\#)/"]
     },
     "plugin/no-at-debug": true,
     "plugin/import-path-leading-underscore": false,
