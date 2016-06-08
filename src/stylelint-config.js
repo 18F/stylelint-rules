@@ -2,9 +2,7 @@ var configs = {
   "plugins": [
     "./plugins/no-at-debug",
     "./plugins/import-path-leading-underscore",
-    "./plugins/import-path-filename-extension",
     "./plugins/else-placement",
-    "./plugins/declaration-block-max-declarations",
     "./plugins/name-format",
     "./plugins/url-format"
   ],
@@ -72,9 +70,7 @@ var configs = {
     },
     "plugin/no-at-debug": true,
     "plugin/import-path-leading-underscore": false,
-    "plugin/import-path-filename-extension": false,
     "plugin/else-placement": 'same-line',
-    "plugin/declaration-block-max-declarations": 10,
     "plugin/name-format": {
       'allow-leading-underscore': false,
       'convention': 'hyphenated-lowercase'
@@ -95,14 +91,14 @@ var configs = {
     "selector-pseudo-class-case": "lower",
     "selector-pseudo-class-parentheses-space-inside": "never",
     "selector-pseudo-element-case": "lower",
-    "selector-pseudo-element-colon-notation": "double",
+    "selector-pseudo-element-colon-notation": false,
     "selector-pseudo-element-no-unknown": true,
     "selector-type-case": "lower",
     "string-no-newline": true,
     "string-quotes": "single",
     "unit-case": "lower",
     "unit-no-unknown": true,
-    "value-list-comma-newline-after": "never-multi-line",
+    "value-list-comma-newline-after": "always-multi-line",
     "value-list-comma-space-after": "always-single-line",
     "value-list-comma-space-before": "never"
   }
