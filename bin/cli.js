@@ -10,7 +10,7 @@ program
   .usage('[options] <fileString>')
   .option('-s, --syntax <scss|css|less>', 'Linter syntax. Defaults to scss.')
   .option('-i, --ignore-files <string>', 'Glob of directories or files to ignore')
-  .option('-r, --formatter <verbose|json|string>', 'Output formatter. Defaults to verbose.')
+  .option('-f, --formatter <verbose|json|string>', 'Output formatter. Defaults to verbose.')
   .option('-c, --config <rules>', 'Path to a js file that exports an object describing additional rules.')
   .parse(process.argv);
 
