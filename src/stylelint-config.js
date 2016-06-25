@@ -65,7 +65,7 @@ var configs = {
     "no-invalid-double-slash-comments": true,
     "number-no-trailing-zeros": true,
     "property-case": "lower",
-    "property-value-whitelist": {
+    "declaration-property-value-whitelist": {
       "/color/": ["/(\$|\#)/"]
     },
     "plugin/no-at-debug": true,
