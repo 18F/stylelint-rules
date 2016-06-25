@@ -4,7 +4,7 @@
   "description": "A style (CSS, Sass) linter for the 18F style guide",
   "main": "index.js",
   "bin": {
-    "@18f/stylelint-rules": "bin/cli.js"
+    "18f-stylelint-rules": "bin/cli.js"
   },
   "scripts": {
     "test": "node bin/test-runner.js",
