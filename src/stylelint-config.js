@@ -46,9 +46,10 @@ var configs = {
     "function-max-empty-lines": 0,
     "function-name-case": "lower",
     "function-parentheses-space-inside": "never-single-line",
-    "function-url-quotes": "single",
+    "function-url-quotes": "always",
     "function-whitespace-after": "always",
     "indentation": 2,
+    "length-zero-no-unit": true,
     "max-empty-lines": 1,
     "max-nesting-depth": 4,
     "media-feature-colon-space-after": "always",
@@ -63,10 +64,9 @@ var configs = {
     "no-extra-semicolons": true,
     "no-invalid-double-slash-comments": true,
     "number-no-trailing-zeros": true,
-    "number-zero-length-no-unit": true,
     "property-case": "lower",
     "property-value-whitelist": {
-      "color": ["/(\$|\#)/"]
+      "/color/": ["/(\$|\#)/"]
     },
     "plugin/no-at-debug": true,
     "plugin/import-path-leading-underscore": false,
@@ -91,7 +91,6 @@ var configs = {
     "selector-pseudo-class-case": "lower",
     "selector-pseudo-class-parentheses-space-inside": "never",
     "selector-pseudo-element-case": "lower",
-    "selector-pseudo-element-colon-notation": false,
     "selector-pseudo-element-no-unknown": true,
     "selector-type-case": "lower",
     "string-no-newline": true,
