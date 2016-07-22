@@ -50,14 +50,14 @@ gulp.task('my-lint-task', lintFunction);
 The linter can also be run using the command line. The script is installed in
 the .bin folder of your node_modules directory. The only required argument to the script is a glob of directories (or path to a single file) to be linted.
 
-For example: `node node_modules/.bin/stylelint-rules "./path/to/sass/**/*.scss"`
+For example: `node_modules/.bin/18f-stylelint-rules "./path/to/sass/**/*.scss"`
 
 Additionally, the CLI exposes the following options:
 
 ```
 -s, --syntax [scss|css|less], Linter syntax. Defaults to scss.
 -i, --ignore-files [string], Glob of directories or files to ignore
--r, --formatter [verbose|json|string], Output formatter. Defaults to verbose.
+-f, --formatter [verbose|json|string], Output formatter. Defaults to verbose.
 -c, --config [rules], Path to a js file that exports an object describing additional rules.
 ```
 
