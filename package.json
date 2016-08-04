@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "commander": "^2.9.0",
+    "concat-map": "0.0.1",
     "glob": "^7.0.3",
     "gulp-stylelint": "^2.0.2",
     "stylelint": "^6.4.1"
