@@ -1,4 +1,4 @@
-#!/bin/env node
+#!/usr/bin/env node
 var program = require('commander');
 var path = require('path');
 var stylelint = require('stylelint');
