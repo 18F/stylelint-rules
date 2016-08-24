@@ -37,6 +37,10 @@ stylelint.lint({
 }).then(function(output) {
   var outputFormatter = formatters[formatter];
   console.log(outputFormatter && outputFormatter(output.results));
+  if (output.errored) {
+    process.exit(1);
+  }
 }).catch(function(err) {
   console.log(err);
+  process.exit(1);
 });
