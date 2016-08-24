@@ -1,6 +1,6 @@
 {
   "name": "@18f/stylelint-rules",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "description": "A style (CSS, Sass) linter for the 18F style guide",
   "main": "index.js",
   "bin": {
